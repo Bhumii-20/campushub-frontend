@@ -50,7 +50,7 @@ function ViewNotes() {
             <p style={{ color: '#888', fontSize: '13px' }}>By: {note.uploadedBy && note.uploadedBy.name}</p>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               {note.fileUrl ? (
-                <a href={API_URL + '/' + note.fileUrl} target='_blank' rel='noreferrer' style={{ background: '#4CAF50', color: 'white', padding: '8px 14px', borderRadius: '6px', textDecoration: 'none', fontSize: '14px' }}>
+                <href={note.fileUrl} target='_blank' rel='noreferrer' style={{ background: '#4CAF50', color: 'white', padding: '8px 14px', borderRadius: '6px', textDecoration: 'none', fontSize: '14px' }}>
                   Download
                 </a>
               ) : (
