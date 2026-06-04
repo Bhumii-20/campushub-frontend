@@ -24,10 +24,6 @@ function ViewNotes() {
     fetchNotes();
   };
 
-  const getViewUrl = (fileUrl) => {
-    return 'https://docs.google.com/viewer?url=' + encodeURIComponent(fileUrl);
-  };
-
   const filtered = notes.filter(note =>
     note.subject.toLowerCase().includes(search.toLowerCase()) ||
     note.title.toLowerCase().includes(search.toLowerCase())
@@ -55,7 +51,7 @@ function ViewNotes() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               {note.fileUrl ? (
                 
-                  href={getViewUrl(note.fileUrl)}
+                  href={note['fileUrl']}
                   target='_blank'
                   rel='noreferrer'
                   style={{ background: '#4CAF50', color: 'white', padding: '8px 14px', borderRadius: '6px', textDecoration: 'none', fontSize: '14px' }}
