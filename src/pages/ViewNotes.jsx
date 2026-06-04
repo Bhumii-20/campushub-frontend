@@ -51,13 +51,12 @@ function ViewNotes() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               {note.fileUrl ? (
                 
-                  href={note.fileUrl}
-                  download
+                  href={'https://docs.google.com/viewer?url=' + encodeURIComponent(note.fileUrl)}
                   target='_blank'
                   rel='noreferrer'
                   style={{ background: '#4CAF50', color: 'white', padding: '8px 14px', borderRadius: '6px', textDecoration: 'none', fontSize: '14px' }}
                 >
-                  Download
+                  View File
                 </a>
               ) : (
                 <span style={{ color: '#aaa', fontSize: '14px' }}>No file</span>
