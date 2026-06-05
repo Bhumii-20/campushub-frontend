@@ -24,13 +24,6 @@ function ViewNotes() {
     fetchNotes();
   };
 
-  const getFileUrl = (url) => {
-    if (url && url.includes('raw/upload')) {
-      return url.replace('raw/upload', 'image/upload') + '.pdf';
-    }
-    return url;
-  };
-
   const filtered = notes.filter(note =>
     note.subject.toLowerCase().includes(search.toLowerCase()) ||
     note.title.toLowerCase().includes(search.toLowerCase())
@@ -58,12 +51,13 @@ function ViewNotes() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               {note.fileUrl ? (
                 
-                  href={getFileUrl(note.fileUrl || '')}
+                  href={note.fileUrl}
+                  download="note-file"
                   target='_blank'
                   rel='noreferrer'
                   style={{ background: '#4CAF50', color: 'white', padding: '8px 14px', borderRadius: '6px', textDecoration: 'none', fontSize: '14px' }}
                 >
-                  View File
+                  Download File
                 </a>
               ) : (
                 <span style={{ color: '#aaa', fontSize: '14px' }}>No file</span>
