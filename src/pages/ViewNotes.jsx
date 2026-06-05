@@ -29,7 +29,7 @@ function ViewNotes() {
           <p>Description: {note.description}</p>
           <p>By: {note.uploadedBy && note.uploadedBy.name}</p>
           {note.fileUrl && (
-            <a href={note.fileUrl} target="_blank" rel="noreferrer">Download File</a>
+            <a href={note.fileUrl} download="note.pdf" target="_blank" rel="noreferrer">Download File</a>
           )}
           <button onClick={() => handleDelete(note._id)}>Delete</button>
         </div>
