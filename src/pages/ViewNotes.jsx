@@ -51,7 +51,7 @@ function ViewNotes() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               {note.fileUrl ? (
                 
-                  href={note.fileUrl}
+                  <a href={note.fileUrl}
                   download="note-file"
                   target='_blank'
                   rel='noreferrer'
